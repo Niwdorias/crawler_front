@@ -1,0 +1,41 @@
+<div>
+    
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4>Url Search Prompt
+                    <a routerLink="/" class="btn btn-danger float-end">List</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <div *ngIf="isLoading; else elseForm">
+                    <app-loader :title="loadingTitle" />
+                </div>
+                <ng-template #elseForm>
+                    <form (ngSubmit)="newSearch()">
+                        <div class="mb-3">
+                            <label>Url Link</label>
+                            <input type="text" [(ngModel)]="url" name="url" class="form-control">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="depth">Choose Crawl Depth</label>
+                            <select [(ngModel)]="depth" name="depth" id="depth" class="form-control" style="width: 200px;">
+                            <option value="1">Depth 1</option>
+                            <option value="2">Depth 2</option>
+                            <option value="3">Depth 3</option>
+                            <option value="4">Depth 4</option>
+                            </select>
+
+                              
+                          
+                        </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Go Scrap</button>
+                </div>
+                    </form>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>  
