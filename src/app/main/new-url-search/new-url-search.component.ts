@@ -28,7 +28,7 @@ export class NewUrlSearchComponent {
     this.searchService.newSearch(inputData).subscribe({
       next: (res: any) =>{
 
-        console.log(res, 'response')
+        console.log(res, 'HERE it WORK')
         
         alert(res.massage);
         this.url = '';
